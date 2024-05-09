@@ -34,6 +34,18 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "fonts": [
+      {
+        "asset": "assets/fonts/Montserrat-Regular.ttf",
+        "fontWeight": "normal",
+        "fontStyle": "normal"
+      },
+      {
+        "asset": "assets/fonts/Montserrat-Bold.ttf",
+        "fontWeight": "bold",
+        "fontStyle": "normal"
+      }
+    ]
   }
 }
