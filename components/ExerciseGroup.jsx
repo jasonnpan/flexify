@@ -28,12 +28,6 @@ export default function ExerciseGroup({ data }) {
 }
 
 const ExerciseCard = ({ item, router, index }) => {
-  console.log("hihihih", item);
-  console.log('lololol', item.images[0]);
-
-  const uriFragment = item.images[1];
-  const completeURI = 'https://acesse.dev/WJajx';
-
   return (
     <View>
       <TouchableOpacity
@@ -44,14 +38,14 @@ const ExerciseCard = ({ item, router, index }) => {
       >
         <View className="bg-netural-200 shadow rounded-[25px]">
           <Image
-            source={{uri: completeURI}}
-            style={{ width: wp(30), height: hp(20)}}
+            source={{uri: item.gifUrl}}
+            style={{ width: wp(36), height: hp(20)}}
             className="rounded-[25px]"
           />
         </View>
 
         <Text
-          style={{ fontSize: hp(1.7) }}
+          style={{ fontSize: hp(1.7), fontFamily:'Montserrat-Regular' }}
           className="text-neutral-700 font-semibold tracking-wide text-center"
           ellipsizeMode="tail"
         >

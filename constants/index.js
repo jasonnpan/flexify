@@ -1,5 +1,9 @@
+// for Exercise DB Gym .... API
+// export const rapidApiKey = "d522829a8fmshaa032a1b02d2a75p129b82jsn9a6ea0ffa594";
 
-export const rapidApiKey = "d522829a8fmshaa032a1b02d2a75p129b82jsn9a6ea0ffa594";
+// for ExerciseDB API
+export const rapidApiKey = "fc07fee686msh330d0c6ea645907p1ccee9jsncf641ad6e65a";
+
 
 export const carouselImages = [
   require("../assets/images/carousel/carousel1.jpg"),
@@ -9,65 +13,55 @@ export const carouselImages = [
   require("../assets/images/carousel/carousel5.jpg"),
 ];
 
-export const equipment = [
+export const muscles = [
   {
-    name: "barbell",
-    displayName: "Barbell",
-    image: require("../assets/images/carousel/carousel2.jpg"),
+      name: 'back',
+      displayName: 'Back',
+      image: require('../assets/images/exercises/back2.jpg'),
   },
   {
-    name: "dumbbell",
-    displayName: "Dumbbell",
-    image: require("../assets/images/exercises/lowerArms.jpg"),
+      name: 'cardio',
+      displayName: 'Cardio',
+      image: require('../assets/images/exercises/cardio2.jpg'),
   },
   {
-    name: "body_only",
-    displayName: "Body Only",
-    image: require("../assets/images/exercises/lowerLegs2.jpg"),
+      name: 'chest',
+      displayName: 'Chest',
+      image: require('../assets/images/exercises/chest2.jpg'),
   },
   {
-    name: "cable",
-    displayName: "Cable",
-    image: require("../assets/images/exercises/cable.png"),
+      name: 'lower arms',
+      displayName: 'Lower Arms',
+      image: require('../assets/images/exercises/lowerArms.jpg'),
   },
   {
-    name: "machine",
-    displayName: "Machine",
-    image: require("../assets/images/exercises/machine.png"),
+      name: 'lower legs',
+      displayName: 'Lower Legs',
+      image: require('../assets/images/exercises/lowerLegs2.jpg'),
   },
   {
-    name: "kettlebells",
-    displayName: "Kettlebell",
-    image: require("../assets/images/exercises/kettlebell.png"),
+      name: 'neck',
+      displayName: 'Neck',
+      image: require('../assets/images/exercises/neck.jpg'),
   },
   {
-    name: "bands",
-    displayName: "Bands",
-    image: require("../assets/images/exercises/bands.png"),
+      name: 'shoulders',
+      displayName: 'Shoulders',
+      image: require('../assets/images/exercises/shoulders2.jpg'),
   },
   {
-    name: "medicine_ball",
-    displayName: "Medicine Ball",
-    image: require("../assets/images/exercises/waist2.jpg"),
+      name: 'upper arms',
+      displayName: 'Upper Arms',
+      image: require('../assets/images/exercises/upperArms2.jpg'),
   },
   {
-    name: "exercise_ball",
-    displayName: "Exercise Ball",
-    image: require("../assets/images/exercises/exerciseBall.png"),
+      name: 'upper legs',
+      displayName: 'Upper Legs',
+      image: require('../assets/images/exercises/upperLegs2.jpg'),
   },
   {
-    name: "foam_roll",
-    displayName: "Foam Roller",
-    image: require("../assets/images/exercises/foam.png"),
+      name: 'waist',
+      displayName: 'Waist',
+      image: require('../assets/images/exercises/waist2.jpg'),
   },
-  {
-    name: "e-z_curl_bar",
-    displayName: "E-Z Curl Bar",
-    image: require("../assets/images/exercises/ezcurl.png"),
-  },
-  {
-    name: "other",
-    displayName: "Other",
-    image: require("../assets/images/exercises/chest2.jpg"),
-  },
-];
+]

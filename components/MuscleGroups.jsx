@@ -4,11 +4,11 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
-import { equipment } from '../constants';
+import { muscles } from '../constants';
 import { LinearGradient } from "expo-linear-gradient";
 import { useRouter } from 'expo-router';
 
-export default function EquipmentGroups() {
+export default function MuscleGroups() {
   const router = useRouter();
 
   return (
@@ -27,7 +27,7 @@ export default function EquipmentGroups() {
       </Text>
 
       <FlatList
-        data={equipment}
+        data={muscles}
         numColumns={2}
         keyExtractor={item => item.name}
         showsVerticalScrollIndicator={false}
@@ -35,13 +35,13 @@ export default function EquipmentGroups() {
         columnWrapperStyle={{
           justifyContent: 'space-around'
         }}
-        renderItem={({item, index}) => <EquipmentGroupCard index={index} router={router} item={item} />}
+        renderItem={({item, index}) => <MuscleGroupCard index={index} router={router} item={item} />}
       />
     </View>
   );
 }
 
-const EquipmentGroupCard = ({item, router, index}) => {
+const MuscleGroupCard = ({item, router, index}) => {
   const handlePress = () => {
     router.push({pathname: '/exercises', params: item});
   };

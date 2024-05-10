@@ -8,7 +8,7 @@ import {
 } from "react-native-responsive-screen";
 import ImageCarousel from "../components/CarouselDisplay";
 import { LinearGradient } from "expo-linear-gradient";
-import EquipmentGroups from "../components/EquipmentGroups";
+import MuscleGroups from "../components/MuscleGroups";
 
 export default function Home() {
 
@@ -59,7 +59,7 @@ export default function Home() {
 
         {/* MUSCLE GROUPS LIST */}
         <View className="flex-1">
-          <EquipmentGroups />
+          <MuscleGroups />
         </View>
       </SafeAreaView>
     </LinearGradient>

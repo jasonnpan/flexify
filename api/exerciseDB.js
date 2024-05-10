@@ -1,7 +1,7 @@
 import axios from 'axios';
-import { equipment, rapidApiKey } from '../constants';
+import { equipment, muscles, rapidApiKey } from '../constants';
 
-const baseUrl = 'https://exercise-db-fitness-workout-gym.p.rapidapi.com';
+const baseUrl = 'https://exercisedb.p.rapidapi.com';
 
 const getExercises = async (url, params) => {
     try {
@@ -11,7 +11,7 @@ const getExercises = async (url, params) => {
             params,
             headers: {
                 'X-RapidAPI-Key': rapidApiKey,
-                'X-RapidAPI-Host': 'exercise-db-fitness-workout-gym.p.rapidapi.com'
+                'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
             }
         };
         const response = await axios.request(options);
@@ -21,7 +21,7 @@ const getExercises = async (url, params) => {
     }
 }
 
-export const getExerciseByEquipment = async (equipment) => {
-    let exerciseData = await getExercises(baseUrl+`/exercises/equipment/${equipment}`);
+export const getExerciseByBodyPart = async (bodyPart) => {
+    let exerciseData = await getExercises(baseUrl+`/exercises/bodyPart/${bodyPart}`);
     return exerciseData;
 }

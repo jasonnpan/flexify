@@ -1,7 +1,7 @@
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import React, { useEffect, useState } from "react";
 import { useLocalSearchParams, useRouter } from "expo-router";
-import { getExerciseByEquipment } from "../api/exerciseDB";
+import { getExerciseByBodyPart } from "../api/exerciseDB";
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -25,7 +25,7 @@ export default function Exercises() {
 
   const getExercises = async (equipment) => {
     if (!gotData) {
-      let data = await getExerciseByEquipment(equipment);
+      let data = await getExerciseByBodyPart(equipment);
       setExerciseData(data);
       setGotData(true);
     }
