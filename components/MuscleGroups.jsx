@@ -6,8 +6,11 @@ import {
 } from "react-native-responsive-screen";
 import { muscleGroups } from '../constants';
 import { LinearGradient } from "expo-linear-gradient";
+import { useRouter } from 'expo-router';
 
 export default function MuscleGroups() {
+  const router = useRouter();
+
   return (
     <View>
       <Text
@@ -32,16 +35,17 @@ export default function MuscleGroups() {
         columnWrapperStyle={{
           justifyContent: 'space-around'
         }}
-        renderItem={({item, index}) => <MuscleGroupCard index={index} item={item} />}
+        renderItem={({item, index}) => <MuscleGroupCard index={index} router={router}item={item} />}
       />
     </View>
   );
 }
 
-const MuscleGroupCard = ({item, index}) => {
+const MuscleGroupCard = ({item, router, index}) => {
   return (
     <View>
       <TouchableOpacity
+        onPress={() => router.push({pathname: '/exercises', params: item})}
         style={{width: wp(40), height: wp(52)}}
         className="flex mb-4">
           <Image
