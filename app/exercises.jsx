@@ -1,7 +1,7 @@
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import React, { useEffect, useState } from "react";
 import { useLocalSearchParams, useRouter } from "expo-router";
-import { getExercisesByBodyPart } from "../api/exerciseDB";
+import { getExerciseByEquipment } from "../api/exerciseDB";
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -13,140 +13,27 @@ import ExerciseGroup from "../components/ExerciseGroup";
 
 export default function Exercises() {
   const router = useRouter();
-  const [exerciseData, setExerciseData] = useState([
-    {
-      bodyPart: "back",
-      equipment: "body weight",
-      gifUrl: "https://v2.exercisedb.io/image/IhSIJPWFEJU76Q",
-      id: "3293",
-      instructions: [
-        "Start by hanging from a pull-up bar with an overhand grip, slightly wider than shoulder-width apart.",
-        "Engage your core and pull your shoulder blades down and back.",
-        "As you pull yourself up, bend one arm and bring your elbow towards your side, while keeping the other arm straight.",
-        "Continue pulling until your chin is above the bar and your bent arm is fully flexed.",
-        "Lower yourself back down with control, straightening the bent arm and repeating the movement on the other side.",
-        "Alternate sides with each repetition.",
-      ],
-      name: "archer pull up",
-      secondaryMuscles: ["biceps", "forearms"],
-      target: "lats",
-    },
-    {
-      bodyPart: "back",
-      equipment: "leverage machine",
-      gifUrl: "https://v2.exercisedb.io/image/Js4jXbAEKYW8jz",
-      id: "0015",
-      instructions: [
-        "Adjust the machine to your desired weight and height.",
-        "Place your hands on the parallel bars with a close grip, palms facing each other.",
-        "Hang from the bars with your arms fully extended and your feet off the ground.",
-        "Engage your back muscles and pull your body up towards the bars, keeping your elbows close to your body.",
-        "Continue pulling until your chin is above the bars.",
-        "Pause for a moment at the top, then slowly lower your body back down to the starting position.",
-        "Repeat for the desired number of repetitions.",
-      ],
-      name: "assisted parallel close grip pull-up",
-      secondaryMuscles: ["biceps", "forearms"],
-      target: "lats",
-    },
-    {
-      bodyPart: "back",
-      equipment: "leverage machine",
-      gifUrl: "https://v2.exercisedb.io/image/zJzZxwHW1MBBi4",
-      id: "0017",
-      instructions: [
-        "Adjust the machine to your desired weight and height settings.",
-        "Grasp the handles with an overhand grip, slightly wider than shoulder-width apart.",
-        "Hang with your arms fully extended and your feet off the ground.",
-        "Engage your back muscles and pull your body up towards the handles, keeping your elbows close to your body.",
-        "Continue pulling until your chin is above the handles.",
-        "Pause for a moment at the top, then slowly lower your body back down to the starting position.",
-        "Repeat for the desired number of repetitions.",
-      ],
-      name: "assisted pull-up",
-      secondaryMuscles: ["biceps", "forearms"],
-      target: "lats",
-    },
-    {
-      bodyPart: "back",
-      equipment: "leverage machine",
-      gifUrl: "https://v2.exercisedb.io/image/kZGmWmtCz-wr59",
-      id: "1431",
-      instructions: [
-        "Adjust the machine to your desired assistance level.",
-        "Stand on the foot platform and grip the handles with an overhand grip, slightly wider than shoulder-width apart.",
-        "Keep your chest up and shoulders back, engage your core, and slightly bend your knees.",
-        "Pull your body up by flexing your elbows and driving your elbows down towards your sides.",
-        "Continue pulling until your chin is above the bar.",
-        "Pause for a moment at the top, then slowly lower your body back down to the starting position.",
-        "Repeat for the desired number of repetitions.",
-      ],
-      name: "assisted standing chin-up",
-      secondaryMuscles: ["biceps", "forearms"],
-      target: "lats",
-    },
-    {
-      bodyPart: "back",
-      equipment: "leverage machine",
-      gifUrl: "https://v2.exercisedb.io/image/kZGmWmtCz-wr59",
-      id: "1431",
-      instructions: [
-        "Adjust the machine to your desired assistance level.",
-        "Stand on the foot platform and grip the handles with an overhand grip, slightly wider than shoulder-width apart.",
-        "Keep your chest up and shoulders back, engage your core, and slightly bend your knees.",
-        "Pull your body up by flexing your elbows and driving your elbows down towards your sides.",
-        "Continue pulling until your chin is above the bar.",
-        "Pause for a moment at the top, then slowly lower your body back down to the starting position.",
-        "Repeat for the desired number of repetitions.",
-      ],
-      name: "assisted standing chin-up",
-      secondaryMuscles: ["biceps", "forearms"],
-      target: "lats",
-    },
-    {
-      bodyPart: "back",
-      equipment: "leverage machine",
-      gifUrl: "https://v2.exercisedb.io/image/kZGmWmtCz-wr59",
-      id: "1431",
-      instructions: [
-        "Adjust the machine to your desired assistance level.",
-        "Stand on the foot platform and grip the handles with an overhand grip, slightly wider than shoulder-width apart.",
-        "Keep your chest up and shoulders back, engage your core, and slightly bend your knees.",
-        "Pull your body up by flexing your elbows and driving your elbows down towards your sides.",
-        "Continue pulling until your chin is above the bar.",
-        "Pause for a moment at the top, then slowly lower your body back down to the starting position.",
-        "Repeat for the desired number of repetitions.",
-      ],
-      name: "assisted standing chin-up",
-      secondaryMuscles: ["biceps", "forearms"],
-      target: "lats",
-    },
-  ]);
+  const [exerciseData, setExerciseData] = useState([]);
+  const [gotData, setGotData] = useState(false);
+
   const item = useLocalSearchParams();
+  console.log("got item", item);
 
-  //   useEffect(() => {
-  //     if (item && item.name) getExercises(item.name);
-  //     const fetchExercises = async () => {
-  //       if (item && item.name) {
-  //         let data = await getExercises(item.name);
-  //         setExerciseData(data);
-  //       }
-  //     };
-  //     fetchExercises();
-  //     const timer = setInterval(fetchExercises, 10000000000);
-  //     return () => clearInterval(timer);
-  //   }, [item]);
+  useEffect(() => {
+    if (item) getExercises(item.name);
+  }, [item, gotData]);
 
-  const handleFetchExercises = async () => {
-    if (item && item.name) {
-      let data = await getExercisesByBodyPart(item.name);
+  const getExercises = async (equipment) => {
+    if (!gotData) {
+      let data = await getExerciseByEquipment(equipment);
       setExerciseData(data);
+      setGotData(true);
     }
   };
 
-  const getExercises = async (bodyPart) => {
-    let data = await getExercisesByBodyPart(bodyPart);
-    setExerciseData(data);
+  const handlePress = () => {
+    router.back();
+    setGotData(false);
   };
 
   return (
@@ -158,7 +45,7 @@ export default function Exercises() {
         className="rounded-b-[40px]"
       />
       <TouchableOpacity
-        onPress={() => router.back()}
+        onPress={handlePress}
         style={{
           height: hp(5),
           width: hp(5),

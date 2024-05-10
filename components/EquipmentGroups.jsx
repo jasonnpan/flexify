@@ -1,14 +1,14 @@
 import { View, Text, FlatList, Image, TouchableOpacity } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
-import { muscleGroups } from '../constants';
+import { equipment } from '../constants';
 import { LinearGradient } from "expo-linear-gradient";
 import { useRouter } from 'expo-router';
 
-export default function MuscleGroups() {
+export default function EquipmentGroups() {
   const router = useRouter();
 
   return (
@@ -27,7 +27,7 @@ export default function MuscleGroups() {
       </Text>
 
       <FlatList
-        data={muscleGroups}
+        data={equipment}
         numColumns={2}
         keyExtractor={item => item.name}
         showsVerticalScrollIndicator={false}
@@ -35,17 +35,21 @@ export default function MuscleGroups() {
         columnWrapperStyle={{
           justifyContent: 'space-around'
         }}
-        renderItem={({item, index}) => <MuscleGroupCard index={index} router={router}item={item} />}
+        renderItem={({item, index}) => <EquipmentGroupCard index={index} router={router} item={item} />}
       />
     </View>
   );
 }
 
-const MuscleGroupCard = ({item, router, index}) => {
+const EquipmentGroupCard = ({item, router, index}) => {
+  const handlePress = () => {
+    router.push({pathname: '/exercises', params: item});
+  };
+
   return (
     <View>
       <TouchableOpacity
-        onPress={() => router.push({pathname: '/exercises', params: item})}
+        onPress={handlePress}
         style={{width: wp(40), height: wp(52)}}
         className="flex mb-4">
           <Image
@@ -66,7 +70,7 @@ const MuscleGroupCard = ({item, router, index}) => {
             style={{fontSize: hp(2), fontFamily: "Montserrat-Regular"}}
             className="text-white text-center pt-6"
           >
-            {item?.name}
+            {item?.displayName}
           </Text>
 
           </LinearGradient>

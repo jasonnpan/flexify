@@ -1,10 +1,9 @@
-import { View, Text, FlatList, TouchableOpacity } from "react-native";
+import { View, Text, FlatList, TouchableOpacity, Image } from "react-native";
 import React from "react";
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
-import { Image } from "expo-image";
 import { useRouter } from "expo-router";
 
 export default function ExerciseGroup({ data }) {
@@ -29,7 +28,12 @@ export default function ExerciseGroup({ data }) {
 }
 
 const ExerciseCard = ({ item, router, index }) => {
-console.log(item);
+  console.log("hihihih", item);
+  console.log('lololol', item.images[0]);
+
+  const uriFragment = item.images[1];
+  const completeURI = 'https://acesse.dev/WJajx';
+
   return (
     <View>
       <TouchableOpacity
@@ -40,9 +44,8 @@ console.log(item);
       >
         <View className="bg-netural-200 shadow rounded-[25px]">
           <Image
-            source={{ uri: item.gifUrl }}
-            contentFit="cover"
-            style={{ width: wp(40), height: hp(20)}}
+            source={{uri: completeURI}}
+            style={{ width: wp(30), height: hp(20)}}
             className="rounded-[25px]"
           />
         </View>
