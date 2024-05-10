@@ -59,8 +59,7 @@ export default function Exercises() {
 
       <View className="mx-8 space-y-3 mt-8">
         <Text
-          style={{ fontSize: hp(3), fontFamily: "Montserrat-Regular" }}
-          className="font-semibold text-neutral-700"
+          style={{ fontSize: hp(3), fontFamily: "Montserrat-Bold" }}
         >
           {item.displayName} Exercises
         </Text>
