@@ -26,12 +26,14 @@ npm i
 ```
 
 **Run the app**
+
+- to run the app on an iOS simulator:
 ```
-// to run the app on an iOS simulator:
 npm run ios
 ```
+
+- to run the app on an android simulator:
 ```
-// to run the app on an android simulator:
 npm run android
 ```
 
