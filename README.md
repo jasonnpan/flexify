@@ -7,12 +7,16 @@ Flexify is a mobile app that fetches and displays the details & instructions for
 * Solution - By centralizing the various types of exercises available, users would be able to find exercise alternatives using the equipment that is available to them
 * Built using the [ExerciseDB API](https://rapidapi.com/justin-WFnsXH_t6/api/exercisedb) from RapidAPI to obtain exercise data
 
+---
+
 <h3> 🧰 Tech Stack </h3>
 <table>
     <tr>
         <td> Javascript, React Native, Tailwind CSS, Expo Router, RapidAPI </td>
     </tr>
 </table>
+
+---
 
 <h3> Test It Out! </h3>
 
