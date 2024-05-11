@@ -13,3 +13,12 @@ Flexify is a mobile app that fetches and displays the details & instructions for
         <td> Javascript, React Native, Tailwind CSS, Expo Router, RapidAPI </td>
     </tr>
 </table>
+
+<h3> Test It Out! </h3>
+1. Clone the repo
+2. Install Dependencies
+- open terminal and go to the cloned directory and run
+`npm i`
+3. Run the app
+`npm run ios \\ to run the app on an iOS simulator`
+`npm run android \\ to run the app on an android simulator`
