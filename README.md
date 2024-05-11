@@ -20,7 +20,7 @@ Flexify is a mobile app that fetches and displays the details & instructions for
 
 **Install Dependencies**
 
-Open terminal and go to the cloned directory and run:
+- Open terminal and go to the cloned directory and run:
 ```
 npm i
 ```
