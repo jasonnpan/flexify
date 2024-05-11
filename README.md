@@ -17,11 +17,14 @@ Flexify is a mobile app that fetches and displays the details & instructions for
 <h3> Test It Out! </h3>
 
 **Clone the repo**
+
 **Install Dependencies**
+
 Open terminal and go to the cloned directory and run:
 ```
 npm i
 ```
+
 **Run the app**
 ```
 // to run the app on an iOS simulator:
