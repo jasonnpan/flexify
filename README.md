@@ -1,4 +1,4 @@
-# flexify
+# Flexify
 
 <h3> 💪🏻 Exercise Instructions Assistant </h3>
 
@@ -18,14 +18,18 @@ Flexify is a mobile app that fetches and displays the details & instructions for
 
 1. **Clone the repo**
 2. **Install Dependencies**
-   - Open terminal and go to the cloned directory and run:
-     ```
-     npm i
-     ```
+Open terminal and go to the cloned directory and run:
+```
+npm i
+```
 3. **Run the app**
-   - ```
-     npm run ios // to run the app on an iOS simulator
-     ```
-   - ```
-     npm run android // to run the app on an android simulator
-     ```
+```
+// to run the app on an iOS simulator:
+npm run ios
+```
+```
+// to run the app on an android simulator:
+npm run android
+```
+
+Happy workout!
