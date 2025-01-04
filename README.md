@@ -18,6 +18,14 @@ Flexify is a mobile app that fetches and displays the details & instructions for
 
 ---
 
+<h3> 📸 App Snapshots </h3>
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/1821fb93-a151-4425-80be-f0eb2f9c7dd7">
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/8ea6f10a-d7cd-4d67-a2bc-c4202752399f">
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/0208f4a3-73c2-467e-9464-9aaeb9c85389">
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/e3cdae49-906b-4c51-b463-56465cca8068">
+
+---
+
 <h3> Test It Out! </h3>
 
 **Clone the repo**
