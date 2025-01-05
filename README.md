@@ -10,15 +10,16 @@ Flexify is a mobile app that fetches and displays the details & instructions for
 ---
 
 <h3> 🧰 Tech Stack </h3>
-<table>
-    <tr>
-        <td> Javascript, React Native, Tailwind CSS, Expo Router, RapidAPI </td>
-    </tr>
-</table>
+
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![React Native](https://img.shields.io/badge/react_native-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Expo](https://img.shields.io/badge/expo-1C1E24?style=for-the-badge&logo=expo&logoColor=#D04A37)      
 
 ---
 
 <h3> 📸 App Snapshots </h3>
+
 <img width="200" alt="image" src="https://github.com/user-attachments/assets/1821fb93-a151-4425-80be-f0eb2f9c7dd7">
 <img width="200" alt="image" src="https://github.com/user-attachments/assets/8ea6f10a-d7cd-4d67-a2bc-c4202752399f">
 <img width="200" alt="image" src="https://github.com/user-attachments/assets/0208f4a3-73c2-467e-9464-9aaeb9c85389">
